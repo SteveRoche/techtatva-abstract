@@ -1,0 +1,16 @@
+CREATE DATABASE abstract;
+USE DATABASE abstract;
+
+CREATE TABLE abstract_teams (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    team_name VARCHAR(32) NOT NULL,
+    team_head VARCHAR(32) NOT NULL,
+    reg_no INT UNSIGNED NOT NULL,
+    branch VARCHAR(32) NOT NULL,
+    sem INT(1) UNSIGNED NOT NULL,
+    institution VARCHAR(32) NOT NULL,
+    phone_no BIGINT(10) UNSIGNED NOT NULL,
+    email VARCHAR(32) NOT NULL,
+    file_path VARCHAR(32) NOT NULL
+);
+

@@ -7,24 +7,24 @@
 	<div>
 		<form action="upload.php" method="POST" name="registration">
 			<div>
-				<input type="text" name="t_name" placeholder="Team Name"/>
-				<input type="text" name="t_head" placeholder="Team Head"/>
-				<input type="text" name="reg_no" placeholder="Registration Number"/>
+				<input type="text" name="t_name" placeholder="Team Name" required/>
+				<input type="text" name="t_head" placeholder="Team Head" required/>
+				<input type="text" name="reg_no" placeholder="Registration Number" required/>
 			</div>
 
 			<div>
-				<input type="text" placeholder="Branch/Specialisation" name="branch"/>
-				<input type="text" placeholder="Semester" name="sem"/>
-				<input type="text" placeholder="Institution" name="insti"/>
+				<input type="text" placeholder="Branch/Specialisation" name="branch" required/>
+				<input type="text" placeholder="Semester" name="sem" required/>
+				<input type="text" placeholder="Institution" name="insti" required/>
 			</div>
 
 			<div>
-				<input type="text" placeholder="Phone Number" name="ph_no"/>
-				<input type="text" placeholder="Email Id" name="em_id"/>
+				<input type="text" placeholder="Phone Number" name="ph_no" required/>
+				<input type="text" placeholder="Email Id" name="em_id" required/>
 			</div>
 
 			<div>
-				<input type="file" name="abstract_file"/>
+				<input type="file" name="abstract_file" required/>
 			</div>
 
 			<input type="submit" name="submit" value="Register"/>

@@ -7,20 +7,20 @@
 	<div>
 		<form action="upload.php" method="POST" name="registration">
 			<div>
-				<input type="text" name="t_name" placeholder="Team Name" required/>
-				<input type="text" name="t_head" placeholder="Team Head" required/>
-				<input type="text" name="reg_no" placeholder="Registration Number" required/>
+				<input type="text" name="t_name" placeholder="Team Name" pattern="[A-Za-z0-9 ]+" required/>
+				<input type="text" name="t_head" placeholder="Team Head" pattern="[A-Za-z.' ]+" required/>
+				<input type="text" name="reg_no" placeholder="Registration Number" pattern="[0-9]{9}" required/>
 			</div>
 
 			<div>
-				<input type="text" placeholder="Branch/Specialisation" name="branch" required/>
-				<input type="text" placeholder="Semester" name="sem" required/>
-				<input type="text" placeholder="Institution" name="insti" required/>
+				<input type="text" placeholder="Branch/Specialisation" name="branch" pattern="[A-Za-z\x26. ]+" required/>
+				<input type="text" placeholder="Semester" name="sem" pattern="[1-9]" required/>
+				<input type="text" placeholder="Institution" name="insti" pattern="[A-Za-z\x26. ]+" required/>
 			</div>
 
 			<div>
-				<input type="text" placeholder="Phone Number" name="ph_no" required/>
-				<input type="text" placeholder="Email Id" name="em_id" required/>
+				<input type="text" placeholder="Phone Number" name="ph_no" pattern="[0-9]{10}" required/>
+				<input type="email" placeholder="Email Id" name="em_id" required/>
 			</div>
 
 			<div>

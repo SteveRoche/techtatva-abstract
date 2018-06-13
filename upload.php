@@ -59,5 +59,7 @@
 
 	$_SESSION['resStr']=$resStr;
 	$_SESSION['file']=$uploadOk;
+	//dont want the whole code to run again
+	//i want to start it after if(isset($_POST['abstract_file']))
 	header("Location: db.php");
 ?>

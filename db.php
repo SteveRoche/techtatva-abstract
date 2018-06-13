@@ -35,6 +35,7 @@
 		if(isset($_POST['abstract_file']))
 		{
 			header("Location: upload.php");
+			//want the code to start from here not whole after going to upload.php
 		}
 		$resStr=$_SESSION['resStr']
 		$team_head=$_POST['t_head'];
@@ -50,7 +51,7 @@
 		if(isset($team_name,$team_head,$reg_no,$branch,$sem,$institution,$phone_no,$email))
 		{
 			//add the details to the database
-			$stmtAddTeam = $pdo->prepare(
+			$stmtAddTeam = $pdo->execute(
 		"INSERT INTO abstract_teams(team_name, team_head, reg_no, branch, sem, institution, phone_no, email, file_path) VALUES ($team_name,$team_head,$reg_no,$branch,$sem,$institution,$phone_no,$email);"
 		}
 		else

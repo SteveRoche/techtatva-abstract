@@ -1,16 +1,18 @@
+html {
+  height: 100%;
+}
+
 body
 {
-	/*background-image: url("tt.svg");*/
-	background: linear-gradient(#000a35, #3688bc);
-	overflow: hidden;
-	background-repeat: no-repeat;
-	background-position: 0% 30%;
-	/*background-size: 35%;*/
-	text-align: center;
-	font-family: "Roboto", sans-serif;
-	color: #39acd6;
-	font-size: 1.3em;
-	margin: 2% 0.2% 5% 0.2%;
+  background: linear-gradient(#000a35, #3688bc);
+  overflow: hidden;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: #39acd6;
+  font-size: 1.3em;
+  margin: 0;
+  height: 100%;
+  background-attachment: fixed;
 }
 
 
@@ -27,10 +29,10 @@ input {
   	background: #f1f1f1;
   	width: 100%;
   	border: 0;
-  	margin: 3px 0;
-  	padding: 3%;
+  	margin: .8% 0;
+  	padding: 2.8%;
   	box-sizing: border-box;
-  	font-size: .9rem;
+  	font-size: 70%;
 }
 
 #button {
@@ -42,7 +44,7 @@ input {
   	margin-top:10px;
   	padding: 4.2% ;
   	color: #FFFFFF;
-  	font-size: .9em;
+  	font-size: 78%;
   	cursor: pointer;
 }
 
@@ -51,7 +53,7 @@ input {
 }
 .heading
 {
-	font-size: 1.3rem;
+	font-size: 90%;
 	padding: 0px 0;
 	color: white;
 	background-color: #3c9cbc;
@@ -60,8 +62,7 @@ input {
 {
 	color: #006a91;
 	background-color: #00061e;
-	margin: 1.6% 5% 0 60%;
-	padding: 3rem 3rem 1.8rem 3rem;
+	margin:  2% 3%;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 7px 7px 0 rgba(0, 0, 0, 0.30);
 }
 

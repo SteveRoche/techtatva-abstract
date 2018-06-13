@@ -57,7 +57,6 @@
 			$message = "Email required";
 		} else {
 			$formOk = true;
-			$message = 'Form is OK.';
 		}
 
 		// File upload

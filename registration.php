@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-		<form action="db.php" method="POST" name="registration">
+		<form action="upload.php" method="POST" name="registration" enctype="multipart/form-data">
 			<div>
 				<input type="text" name="t_name" placeholder="Team Name" pattern="[A-Za-z0-9 ]+" required/>
 				<input type="text" name="t_head" placeholder="Team Head" pattern="[A-Za-z.' ]+" required/>
@@ -27,15 +27,16 @@
 			</div>
 
 			<div>
-				<input type="file" name="abstract_file" required/>
+				<input type="file" name="abstract_file" id="abstract_file" required/>
 			</div>
 			<input type="submit" name="submit" value="Register"/>
 			<?php
-				if(isset($_SESSION['message']))
-				{
-					echo "<br>";
-					$message=$_SESSION['message'];
-					echo "$message";
+				if(isset($_SESSION['message'])) {
+					echo '<br/>' . $_SESSION['message'];
+				}
+
+				if (isset($_SESSION['uploadMessage'])) {
+					echo '<br/>' . $_SESSION['uploadMessage'];
 				}
 			?>
 		</form>

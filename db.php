@@ -1,4 +1,8 @@
 <?php
+	
+	session_start();
+	
+
 	$dbHost = 'localhost';
 	$dbName = 'abstract';
 	$dbUser = 'root';
@@ -15,10 +19,8 @@
 
 	$pdo = new PDO($dsn, $dbUser, $dbPassword, $opt);
 
-	$stmtAddTeam = $pdo->prepare(
-		"INSERT INTO abstract_teams(team_name, team_head, reg_no, branch, sem, institution, phone_no, email, file_path) VALUES (?,?,?,?,?,?,?,?,?);"
+	
 	);
-
 	$team_name="";
 	$team_head="";
 	$reg_no="";
@@ -27,12 +29,14 @@
 	$institution="";
 	$phone_no="";
 	$email="";
+	$resStr="";
 	if(isset($_POST['submit']))
 	{
 		if(isset($_POST['abstract_file']))
 		{
 			header("Location: upload.php");
 		}
+		$resStr=$_SESSION['resStr']
 		$team_head=$_POST['t_head'];
 		$team_name=$_POST['t_name'];
 		$reg_no=$_POST['reg_no'];
@@ -46,46 +50,48 @@
 		if(isset($team_name,$team_head,$reg_no,$branch,$sem,$institution,$phone_no,$email))
 		{
 			//add the details to the database
-			//code here
+			$stmtAddTeam = $pdo->prepare(
+		"INSERT INTO abstract_teams(team_name, team_head, reg_no, branch, sem, institution, phone_no, email, file_path) VALUES ($team_name,$team_head,$reg_no,$branch,$sem,$institution,$phone_no,$email);"
 		}
 		else
 		{
 			if(empty($team_head))
 			{
-				$error_message="Team head required";
+				$message="Team head required";
 			}
 			elseif (empty($team_name)) 
 			{
-				$error_message="Team name required";
+				$message="Team name required";
 			}
 			elseif (empty($reg_no))
 			{
-				$error_message="registeration number required";
+				$message="registeration number required";
 			}
 			elseif (empty($branch))
 			{
-				$error_message="Branch/Specialisation required";
+				$message="Branch/Specialisation required";
 			}
 			elseif (empty($sem))
 			{
-				$error_message="Semester required";
+				$message="Semester required";
 			}
 			elseif (empty($institution))
 			{
-				$error_message="Institution required";
+				$message="Institution required";
 			}
 			elseif (empty($phone_no))
 			{
-				$error_message="Phone number required";
+				$message="Phone number required";
 			}
 			elseif (empty($email))
 			{
-				$error_message="Email required";
+				$message="Email required";
 			}
 			//got to kn which is missing
 			
-			$_SESSION['error_message']=$error_message;
-			header("Location: registeration.php")
+			$_SESSION['message1']=$message1;
+			$_SESSION['message2']=$resStr;
+			header("Location: registration.php")
 		}
 	}
 

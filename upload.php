@@ -48,13 +48,16 @@
 		if(move_uploaded_file($_FILES['abstract']['tmp_name'], $uploadFilePath)) 
 		{
 			$resStr = "Uploaded file successfully <br/>";
+			$uploadOk= true;
 		} 
 		else 
 		{
 			$resStr = "Failed to upload file <br/>";
-			$uploadOk = true;
+			$uploadOk = false;
 		}
 	}
 
-	echo $resStr;
+	$_SESSION['resStr']=$resStr;
+	$_SESSION['file']=$uploadOk;
+	header("Location: db.php");
 ?>

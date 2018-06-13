@@ -21,6 +21,8 @@
 
 	
 	);
+	
+	//initialisation
 	$team_name="";
 	$team_head="";
 	$reg_no="";
@@ -32,11 +34,13 @@
 	$resStr="";
 	if(isset($_POST['submit']))
 	{
+		//if there is an abstract file
 		if(isset($_POST['abstract_file']))
 		{
 			header("Location: upload.php");
 			//want the code to start from here not whole after going to upload.php
 		}
+		//storing the data
 		$resStr=$_SESSION['resStr']
 		$team_head=$_POST['t_head'];
 		$team_name=$_POST['t_name'];
@@ -54,6 +58,8 @@
 			$stmtAddTeam = $pdo->execute(
 		"INSERT INTO abstract_teams(team_name, team_head, reg_no, branch, sem, institution, phone_no, email, file_path) VALUES ($team_name,$team_head,$reg_no,$branch,$sem,$institution,$phone_no,$email);"
 		}
+
+		//to check whats not given by the user
 		else
 		{
 			if(empty($team_head))

@@ -81,8 +81,7 @@
 		// File upload
 		if($formOk && isset($_FILES['abstract_file'])) {
 			$uploadDir = 'uploads/';
-			echo 'brlh';
-
+			
 			$errCode = $_FILES['abstract_file']['error'];
 			$uploadFilePath = $uploadDir . basename($_FILES['abstract_file']['name']);
 			if ($errCode != UPLOAD_ERR_OK && $errCode != UPLOAD_ERR_FORM_SIZE && $errCode != UPLOAD_ERR_INI_SIZE) 

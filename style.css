@@ -1,0 +1,69 @@
+body
+{
+	/*background-image: url("tt.svg");*/
+	background: linear-gradient(#000a35, #3688bc);
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-position: 0% 30%;
+	/*background-size: 35%;*/
+	text-align: center;
+	font-family: "Roboto", sans-serif;
+	color: #39acd6;
+	font-size: 1.3em;
+	margin: 2% 0.2% 5% 0.2%;
+}
+
+
+#logo {
+	position: absolute;
+    top: 15%;
+    left: 10px;
+    height: 80%;
+    width: 40%;
+}
+
+input {
+  	font-family: "Roboto", sans-serif;
+  	background: #f1f1f1;
+  	width: 100%;
+  	border: 0;
+  	margin: 3px 0;
+  	padding: 3%;
+  	box-sizing: border-box;
+  	font-size: .9rem;
+}
+
+#button {
+  	font-family: "Roboto", sans-serif;
+  	text-transform: uppercase;
+  	background: #3c9cbc;
+  	width: 100%;
+  	border: 0;
+  	margin-top:10px;
+  	padding: 4.2% ;
+  	color: #FFFFFF;
+  	font-size: .9em;
+  	cursor: pointer;
+}
+
+#button:hover {
+  background: #2a738c;
+}
+.heading
+{
+	font-size: 1.3rem;
+	padding: 0px 0;
+	color: white;
+	background-color: #3c9cbc;
+}
+.choices
+{
+	color: #006a91;
+	background-color: #00061e;
+	margin: 1.6% 5% 0 60%;
+	padding: 3rem 3rem 1.8rem 3rem;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 7px 7px 0 rgba(0, 0, 0, 0.30);
+}
+
+
+

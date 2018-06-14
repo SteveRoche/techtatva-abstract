@@ -103,8 +103,8 @@
 		{
 			//need to remove a space and ,
 			
-			$message=substr($message, 0,strlen($message)-2)
-			$message.= " resquired";
+			$message = substr($message, 0, strlen($message)-2);
+			$message .= " required";
 		}
 
 		// File upload
@@ -153,5 +153,9 @@
 			$_SESSION['upload_message'] = $uploadMessage;
 			header("Location: registration.php");
 		}
+	}
+	else
+	{
+		header("Location: registration.php");
 	}
 ?>

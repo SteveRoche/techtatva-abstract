@@ -21,6 +21,9 @@
 		"INSERT INTO abstract_teams(team_name, team_head, reg_no, branch, sem, institution, phone_no, email, file_path) VALUES (?,?,?,?,?,?,?,?,?)"
 	);
 
+	//after every submit everything shud become empty
+	unset($team_name, $team_head, $reg_no, $branch, $sem, $institution, $phone_no, $email);
+	
 	if(isset($_POST['submit']))
 	{
 
@@ -42,6 +45,7 @@
 		$email = $_POST['em_id'];
 		$message='';
 
+		//for every missing part
 		if (empty($team_name)) 
 		{
 			$message .= "Team name,";
@@ -52,7 +56,7 @@
 		} 
 		if (empty($reg_no)) 
 		{
-			$message .= "registeration number, ";
+			$message .= "Registeration number, ";
 		} 
 		if (empty($branch)) 
 		{
@@ -74,12 +78,16 @@
 		{
 			$message .= "Email, ";
 		} 
+		//if everything is there
 		if(isset($team_name, $team_head, $reg_no, $branch, $sem, $institution, $phone_no, $email))
 		{
 			$formOk = true;
 		}
 		else
 		{
+			//keep whatever the user has already inputed
+			//if something is null it will remain null
+
 			$_POST['t_name'] = $team_name;
 			$_POST['t_head'] = $team_head;
 			$_POST['reg_no'] = $reg_no;
@@ -93,6 +101,8 @@
 		}
 		if($message!='')
 		{
+			//need to remove a space and ,
+			
 			$message=substr($message, 0,strlen($message)-2)
 			$message.= " resquired";
 		}

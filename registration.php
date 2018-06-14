@@ -30,11 +30,12 @@
 
 			<input type="submit" name="submit" value="Register" id="button"/>
 			<?php
-				if(isset($_SESSION['message'])) {
+				if(isset($_SESSION['message']))
+				{
 					echo '<br/>' . $_SESSION['message'];
 				}
-
-				if (isset($_SESSION['uploadMessage'])) {
+				if (isset($_SESSION['uploadMessage'])) 
+				{
 					echo '<br/>' . $_SESSION['uploadMessage'];
 				}
 			?>

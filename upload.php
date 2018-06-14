@@ -40,46 +40,66 @@
 
 		$phone_no = $_POST['ph_no'];
 		$email = $_POST['em_id'];
+		$message='';
 
 		if (empty($team_name)) 
 		{
-			$message = "Team name required";
+			$message .= "Team name,";
 		} 
-		elseif (empty($team_head)) 
+		if (empty($team_head)) 
 		{
-			$message = "Team head required";
+			$message .= "Team head, ";
 		} 
-		elseif (empty($reg_no)) 
+		if (empty($reg_no)) 
 		{
-			$message = "registeration number required";
+			$message .= "registeration number, ";
 		} 
-		elseif (empty($branch)) 
+		if (empty($branch)) 
 		{
-			$message = "Branch/Specialisation required";
+			$message .= "Branch/Specialisation, ";
 		} 
-		elseif (empty($sem)) 
+		if (empty($sem)) 
 		{
-			$message = "Semester required";
+			$message .= "Semester, ";
 		} 
-		elseif (empty($institution))
+		if (empty($institution))
 		{
-			$message = "Institution required";
+			$message .= "Institution, ";
 		} 
-		elseif (empty($phone_no)) 
+		if (empty($phone_no)) 
 		{
-			$message = "Phone number required";
+			$message .= "Phone number, ";
 		} 
-		elseif (empty($email)) 
+		if (empty($email)) 
 		{
-			$message = "Email required";
+			$message .= "Email, ";
 		} 
-		else 
+		if(isset($team_name, $team_head, $reg_no, $branch, $sem, $institution, $phone_no, $email))
 		{
 			$formOk = true;
 		}
+		else
+		{
+			$_POST['t_name'] = $team_name;
+			$_POST['t_head'] = $team_head;
+			$_POST['reg_no'] = $reg_no;
+
+			$_POST['branch'] = $branch;
+			$_POST['sem'] = $sem;
+			$_POST['insti'] = $institution;
+
+			$_POST['ph_no'] = $phone_no;
+			$_POST['em_id'] = $email;
+		}
+		if($message!='')
+		{
+			$message=substr($message, 0,strlen($message)-2)
+			$message.= " resquired";
+		}
 
 		// File upload
-		if($formOk && isset($_FILES['abstract_file'])) {
+		if($formOk && isset($_FILES['abstract_file'])) 
+		{
 			$uploadDir = 'uploads/';
 			
 			$errCode = $_FILES['abstract_file']['error'];

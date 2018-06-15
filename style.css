@@ -1,69 +1,111 @@
-body
-{
-	/*background-image: url("tt.svg");*/
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
 	background: linear-gradient(#000a35, #3688bc);
-	overflow: hidden;
-	background-repeat: no-repeat;
-	background-position: 0% 30%;
-	/*background-size: 35%;*/
 	text-align: center;
 	font-family: "Roboto", sans-serif;
 	color: #39acd6;
 	font-size: 1.3em;
-	margin: 2% 0.2% 5% 0.2%;
 }
 
-
-#logo {
-	position: absolute;
-    top: 15%;
-    left: 10px;
-    height: 80%;
-    width: 40%;
-}
-
-input {
-  	font-family: "Roboto", sans-serif;
-  	background: #f1f1f1;
-  	width: 100%;
-  	border: 0;
-  	margin: 3px 0;
-  	padding: 3%;
-  	box-sizing: border-box;
-  	font-size: .9rem;
+.page-grid-container {
+	display: grid;
+	grid-template-rows: 3em calc(100vh - 3em) 100vh;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-areas:
+	"header header"
+	"logo logo"
+	"form form";
 }
 
 #button {
-  	font-family: "Roboto", sans-serif;
-  	text-transform: uppercase;
-  	background: #3c9cbc;
-  	width: 100%;
-  	border: 0;
-  	margin-top:10px;
-  	padding: 4.2% ;
-  	color: #FFFFFF;
-  	font-size: .9em;
-  	cursor: pointer;
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	background: #3c9cbc;
+	width: 100%;
+	border: 0;
+	margin-top:10px;
+	padding: 4.2% ;
+	color: #FFFFFF;
+	font-size: .9em;
+	cursor: pointer;
 }
 
 #button:hover {
-  background: #2a738c;
+	background: #2a738c;
 }
-.heading
-{
-	font-size: 1.3rem;
-	padding: 0px 0;
+
+#header {
+	grid-area: header;
+	text-transform: uppercase;
+	padding: 0;
 	color: white;
 	background-color: #3c9cbc;
 }
-.choices
-{
+
+.heading {
+	font-size: 1.2em;
+	vertical-align: middle;
+}
+
+#logo {
+	grid-area: logo;
+	background-image: url('tt.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	box-sizing: content-box;
+	margin: .2em .2em 2em .2em;
+	background-position: center;
+}
+
+#form-container {
+	grid-area: form;
+	padding: 1em;
 	color: #006a91;
 	background-color: #00061e;
-	margin: 1.6% 5% 0 60%;
-	padding: 3rem 3rem 1.8rem 3rem;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 7px 7px 0 rgba(0, 0, 0, 0.30);
 }
 
+#form-container form {
+	display: grid;
+	grid-gap: .2em;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(7, 2em);
+}
 
 
+input {
+	font-family: "Roboto", sans-serif;
+	background: #f1f1f1;
+	width: 100%;
+	border: 0;
+	border-radius: .5em;
+	font-size: .9rem;
+	padding: 0 2ch;
+}
+
+#input-t_name, #input-t_head, #input-reg_no, #input-em_id {
+	grid-column: 1 / 3;
+}
+
+#input-sem {
+	width: 60%;
+}
+
+@media only screen and (min-width: 500px) {
+	.page-grid-container {
+		grid-template-rows: 3em calc(100vh - 3em);
+		grid-template-areas:
+		"header header"
+		"logo form"
+	}
+}

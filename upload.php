@@ -44,7 +44,7 @@
 		$phone_no = $_POST['ph_no'];
 		$email = $_POST['em_id'];
 		$message='';
-		$upload='';
+		$uploadOk='';
 
 		//for every missing part
 		if (empty($team_name)) 

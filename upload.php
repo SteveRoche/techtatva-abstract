@@ -44,7 +44,7 @@
 		$phone_no = $_POST['ph_no'];
 		$email = $_POST['em_id'];
 		$message='';
-
+		$uploadMessage='';
 		//for every missing part
 		if (empty($team_name)) 
 		{
@@ -142,15 +142,14 @@
 		if ($formOk && $uploadOk) 
 		{
 			$stmtAddTeam->execute([$team_name, $team_head, $reg_no, $branch, $sem, $institution, $phone_no, $email, $uploadFilePath]);
-			echo "Registered successfully";
-			session_destroy();
+			$message = "Registered successfully";
+			//session_destroy();
 		}
-		else 
-		{
-			$_SESSION['message'] = $message;
-			$_SESSION['upload_message'] = $uploadMessage;
-			header("Location: registration.php");
-		}
+			
+		//no matter the messages should be shown
+		$_SESSION['message'] = $message;
+		$_SESSION['upload_message'] = $uploadMessage;
+		header("Location: registration.php");
 	}
 	else
 	{

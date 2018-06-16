@@ -20,7 +20,7 @@ body {
 .page-grid-container {
 	display: grid;
 	grid-template-rows: 3em calc(100vh - 3em) 100vh;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: 5fr 3fr;
 	grid-template-areas:
 	"header header"
 	"logo logo"
@@ -33,7 +33,7 @@ body {
 	background: #3c9cbc;
 	width: 100%;
 	border: 0;
-	margin-top:1px;
+	margin-top:.7px;
 	padding: 4.2% ;
 	color: #FFFFFF;
 	font-size: 1rem;
@@ -69,6 +69,9 @@ body {
 
 #form-container {
 	grid-area: form;
+	margin: 18% 8%;
+	height: 70%;
+  	border-radius: .8em;
 	padding: 1em;
 	color: #006a91;
 	background-color: #00061e;

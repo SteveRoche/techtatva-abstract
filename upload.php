@@ -88,16 +88,16 @@
 			//keep whatever the user has already inputed
 			//if something is null it will remain null
 
-			$_POST['t_name'] = $team_name;
-			$_POST['t_head'] = $team_head;
-			$_POST['reg_no'] = $reg_no;
+			$_SESSION['t_name'] = $team_name;
+			$_SESSION['t_head'] = $team_head;
+			$_SESSION['reg_no'] = $reg_no;
 
-			$_POST['branch'] = $branch;
-			$_POST['sem'] = $sem;
-			$_POST['insti'] = $institution;
+			$_SESSION['branch'] = $branch;
+			$_SESSION['sem'] = $sem;
+			$_SESSION['insti'] = $institution;
 
-			$_POST['ph_no'] = $phone_no;
-			$_POST['em_id'] = $email;
+			$_SESSION['ph_no'] = $phone_no;
+			$_SESSION['em_id'] = $email;
 		}
 		if($message!='')
 		{

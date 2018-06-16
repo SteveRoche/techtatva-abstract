@@ -33,10 +33,10 @@ body {
 	background: #3c9cbc;
 	width: 100%;
 	border: 0;
-	margin-top:10px;
+	margin-top:1px;
 	padding: 4.2% ;
 	color: #FFFFFF;
-	font-size: .9em;
+	font-size: 1rem;
 	cursor: pointer;
 }
 

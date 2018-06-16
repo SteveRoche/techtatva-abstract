@@ -44,6 +44,7 @@
 		$phone_no = $_POST['ph_no'];
 		$email = $_POST['em_id'];
 		$message='';
+		$upload='';
 
 		//for every missing part
 		if (empty($team_name)) 
@@ -137,22 +138,23 @@
 			else 
 			{
 				$uploadOk = true;
-				$uploadMessage = 'Upload is Ok';
+				$uploadMessage = 'File is uploaded';
 			}
 		}
 
 		if ($formOk && $uploadOk) 
 		{
 			$stmtAddTeam->execute([$team_name, $team_head, $reg_no, $branch, $sem, $institution, $phone_no, $email, $uploadFilePath]);
-			echo "Registered successfully";
-			session_destroy();
+			$message = "Registered successfully";
+			//session_destroy();
+			//no need to destory session
 		}
-		else 
-		{
-			$_SESSION['message'] = $message;
-			$_SESSION['upload_message'] = $uploadMessage;
-			header("Location: registration.php");
-		}
+		
+		//message and upload message has to be shown everytime
+		$_SESSION['message'] = $message;
+		$_SESSION['upload_message'] = $uploadMessage;
+		header("Location: registration.php");
+	
 	}
 	else
 	{
